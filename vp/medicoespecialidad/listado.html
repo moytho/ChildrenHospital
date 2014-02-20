@@ -1,0 +1,48 @@
+<h2>Especialidades Por Medico</h2>
+
+
+<div class="row">
+  <div class="col-md-6">
+  <form novalidate name="AddNewForm" id="add-new-form" method="post" action="">
+
+   <div class="form-group">
+      <label for="Especialidades">Especialidades:</label>
+      <select name="Especialidades" 
+              class="form-control" 
+              ng-model="medicoespecialidad.idEspecialidad" 
+              ng-options="elemento.idEspecialidad as elemento.Nombre for elemento in especialidades" required>
+        <option value="">Seleccione una especialidad</option>
+    </select>
+    </div>
+
+    <input name="txtprueba" style="display:none;" type="text" ng-model="medicoespecialidad.idEspecialidad" />
+
+    <button class="btn btn-primary" ng-disabled="AddNewForm.$invalid || isUnchanged(medicoespecialidad)" id="add-new-btn" ng-click="add_new(medicoespecialidad)">Agregar!</button>
+
+  </form>
+</div>
+</div>
+
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Medico</th>
+      <th>Especialidad</th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="medicoespecialidad in medicoespecialidades">
+      <td style="display:none">{{medicoespecialidad.idMedicoEspecialidad}}</td>
+      <td ng-model="medicoespecialidad.idMedico" style="display:none">{{medicoespecialidad.idMedico}}</td>
+      <td>{{medicoespecialidad.NombreMedico}}</td>
+      <td ng-model="medicoespecialidad.idEspecialidad" style="display:none">{{medicoespecialidad.idEspecialidad}}</td>
+      <td>{{medicoespecialidad.NombreEspecialidad}}</td>
+      <td><a href="#/medicoespecialidadeliminar/{{medicoespecialidad.idMedicoEspecialidad}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></button></td>
+    </tr>
+  </tbody>
+</table>
+<a class="btn btn-primary" href="#/medico">Regresar</a>
+
+
+

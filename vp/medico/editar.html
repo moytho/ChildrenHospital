@@ -1,0 +1,24 @@
+<h2>Editar Medico</h2>
+<div class="row">
+  <div class="col-md-6">
+  <form novalidate ng-repeat="medico in medicos" name="AddNewForm" id="add-new-form" method="post" action="">
+    <input type="hidden" ng-model="medico.idMedico" value="{{medico.idMedico}" />
+    <div class="form-group">
+      <label for="Nombre">Nombre:</label>
+      <input class="form-control" type="text" placeholder="Ingrese los Nombres" ng-model="medico.Nombre" value="{{medico.Nombre}}" required autofocus />
+    </div>
+    <div class="form-group">
+      <label for="Apellido">Apellido:</label>
+      <input class="form-control" type="text" placeholder="Ingrese los Apellidos" ng-model="medico.Apellido" value="{{medico.Apellido}}" required />
+    </div>
+    <div class="form-group">
+      <label for="Disponibilidad">Disponibilidad:</label>
+      <input class="form-control" type="text" placeholder="Cantidad de Pacientes que atiende el Medico"   ng-model="medico.Disponibilidad" value="{{medico.Disponibilidad}}" require />
+    </div>
+
+    <button class="btn btn-primary" ng-disabled="AddNewForm.$invalid || isUnchanged(medico)" id="add-new-btn" ng-click="update(medico)">Actualizar <span class="glyphicon glyphicon-floppy-disk"></span></button>
+    <button class="btn btn-danger" ng-click="delete(medico)">Eliminar <span class="glyphicon glyphicon-trash"></span></button>
+    <a href="#/medico" class="btn">Cancelar</a>
+  </form>
+</div>
+</div>

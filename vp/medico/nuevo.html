@@ -1,0 +1,21 @@
+<h2>Agregar Medico</h2>
+<div class="row">
+  <div class="col-md-6">
+  <form name="AddNewForm" id="add-new-form" method="post" action="">
+    <div class="form-group">
+      <label for="Nombre">Nombres:</label>
+      <input class="form-control" type="text" placeholder="Ingrese los Nombres" ng-model="medico.Nombre" required autofocus />
+    </div>
+    <div class="form-group">
+      <label for="Apellido">Apellidos:</label>
+      <input class="form-control" type="text" placeholder="Ingrese los Apellidos" ng-model="medico.Apellido" required />
+    </div>
+    <div class="form-group">
+      <label for="Disponibilidad">Disponibilidad:</label>
+      <input class="form-control" type="number" min="1" max="200" value="1" pattern="\d+" placeholder="Cantidad de pacientes que atiende el Medico"  ng-model="medico.Disponibilidad" required/>
+    </div>
+    <button class="btn btn-primary" ng-disabled="AddNewForm.$invalid || isUnchanged(medico)" id="add-new-btn" ng-click="add_new(medico)">Guardar!</button>
+    <a href="#/medico" class="btn">Cancelar</a>
+  </form>
+</div>
+</div>

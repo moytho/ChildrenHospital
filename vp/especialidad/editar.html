@@ -1,0 +1,17 @@
+<h2>Editar Especialidad</h2>
+<div class="row">
+  <div class="col-md-6">
+  <form novalidate ng-repeat="especialidad in especialidades" name="AddNewForm" id="add-new-form" method="post" action="">
+    <input type="hidden" ng-model="especialidad.idEspecialidad" value="{{especialidad.idEspecialidad}" />
+    
+    <div class="form-group">
+      <label for="Nombre">Nombre:</label>
+      <input class="form-control" placeholder="Ingrese el nombre de una especialidad" type="text" ng-model="especialidad.Nombre" value="{{especialidad.Nombre}}" required autofocus/>
+    </div>
+
+    <button class="btn btn-primary" ng-disabled="AddNewForm.$invalid || isUnchanged(especialidad)" id="add-new-btn" ng-click="update(especialidad)">Actualizar <span class="glyphicon glyphicon-floppy-disk"></span></button>
+    <button class="btn btn-danger" ng-click="delete(especialidad)">Eliminar <span class="glyphicon glyphicon-trash"></span></button>
+    <a href="#/especialidad" class="btn">Cancelar</a>
+  </form>
+</div>
+</div>

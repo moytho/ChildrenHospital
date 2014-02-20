@@ -1,0 +1,19 @@
+<h2>Medicos</h2>
+
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Nombres</th>
+      <th>Editar</th>
+      <th>Agregar Especialidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="medico in medicos">
+      <td>{{medico.Nombre}}</td>
+      <td><a href="#/medicoeditar/{{medico.idMedico}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></button></td>
+      <td><a href="#/medicoespecialidad/{{medico.idMedico}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-pencil"></i></button></td>
+    </tr>
+  </tbody>
+</table>
+<a class="btn btn-primary" href="#/mediconuevo">Agregar Medico</a>

@@ -1,0 +1,15 @@
+<h2>Agregar Especialidad</h2>
+<div class="row">
+  <div class="col-md-6">
+  <form novalidate name="AddNewForm" id="add-new-form" method="post" action="">
+
+    <div class="form-group">
+      <label for="Nombre">Nombre Especialidad:</label>
+      <input class="form-control" type="text" ng-model="especialidad.Nombre" required />
+    </div>
+
+    <button class="btn btn-primary" ng-disabled="AddNewForm.$invalid || isUnchanged(especialidad)" id="add-new-btn" ng-click="add_new(especialidad)">Guardar!</button>
+    <a href="#/especialidad" class="btn">Cancelar</a>
+  </form>
+</div>
+</div>
